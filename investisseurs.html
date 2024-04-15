@@ -4,6 +4,8 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>La Centrale des PME Bootstrap Template - Index</title>
   <meta content="" name="description">
@@ -25,8 +27,12 @@
   <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
+   <!-- CSS Bootstrap -->
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
+  <link href="assets/css/lightslider.css" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: Bootslander
@@ -123,7 +129,10 @@
 
 
 
-
+<div class="section-title" data-aos="fade-up">
+          <h2>Parties Prenantes</h2>
+          <p>Nos catégories de Parties prenantes</p>
+        </div>
     <!-- ======= Counts Section ======= -->
     <section id="counts" class="counts">
       <div class="container">
@@ -131,33 +140,33 @@
         <div class="row" data-aos="fade-up">
 
           <div class="col-lg-3 col-md-6">
-            <div class="count-box">
+            <div class="count-box" onclick="updateUsers('Clients')">
               <i class="bi bi-emoji-smile"></i>
-              <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
+              <span id="Clients" data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="10" class="purecounter"></span>
               <p>Clients</p>
             </div>
           </div>
 
           <div class="col-lg-3 col-md-6 mt-5 mt-md-0">
-            <div class="count-box">
+            <div class="count-box" onclick="updateUsers('Entreprises')">
               <i class="bi bi-journal-richtext"></i>
-              <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" class="purecounter"></span>
+              <span id="Entreprises" data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="10" class="purecounter"></span>
               <p>Entreprises concurrentes</p>
             </div>
           </div>
 
           <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
-            <div class="count-box">
+            <div class="count-box" onclick="updateUsers('Conseillers')">
               <i class="bi bi-headset"></i>
-              <span data-purecounter-start="0" data-purecounter-end="1463" data-purecounter-duration="1" class="purecounter"></span>
+              <span id="Conseillers" data-purecounter-start="0" data-purecounter-end="1463" data-purecounter-duration="10" class="purecounter"></span>
               <p>Conseillers</p>
             </div>
           </div>
 
           <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
-            <div class="count-box">
+            <div class="count-box" onclick="updateUsers('Partenaires')">
               <i class="bi bi-people"></i>
-              <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1" class="purecounter"></span>
+              <span id="Partenaires" data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="10" class="purecounter"></span>
               <p>Partenaires potentiels</p>
             </div>
           </div>
@@ -171,69 +180,61 @@
 
 
     <!-- ======= Team Section ======= -->
-    <section id="team" class="team">
+    <section id="team" class="team">    
+        
+
+      <!-- Container User -->
       <div class="container">
-
-        <div class="section-title" data-aos="fade-up">
-          <h2>Investisseurs</h2>
-          <p>La liste de nos investisseurs</p>
-        </div>
-
-        <div class="search">
-          <div class="search-top">
-            <div class="container">
-              <div class="row">
-                <div class="col-lg-4 col-md-6 search-newsletter">
-                  <h4>Recherchez des investisseurs potentiels.</h4>
-                  <p></p>
-                  <form action="/search" method="get">
-                    <input type="text" name="name"><input type="submit" value="Search">
-                  </form>
+        <div class="container-search">
+          <div class="search-box">
+            <input class="search-txt" type="text" name="" placeholder="Rechercher..." id="">
+            <a class="search-btn" href="#">
+              <i class="bi bi-search"></i>
+            </a>
+          </div>
+        </div>  
+                
+                
+        <div class="row user-container" data-aos="fade-left">
+          <ul id="autoWidth" class="cs-hidden">
+        <li class="item-a">
+                <div class="carte">
+                    <p class="users">USERS</p>
+                    <img src="assets/img/user1.jpg" alt="" class="modele">
+                    <div class="detail">
+                      <h4>Walter White</h4>
+                      <span>Chief Executive Officer</span>
+                      <div class="social">
+                        <a href=""><i class="bi bi-twitter"></i></a>
+                        <a href=""><i class="bi bi-facebook"></i></a>
+                        <a href=""><i class="bi bi-instagram"></i></a>
+                        <a href=""><i class="bi bi-linkedin"></i></a>
+                      </div>
+                  </div>
                 </div>
-              </div>
+        </li>
+        <li class="item-a">
+          <div class="carte">
+              <p class="users">USERS</p>
+              <img src="assets/img/user2.jpg" alt="" class="modele">
+              <div class="detail">
+                <h4>Ali Conor</h4>
+                <span>Police Officer</span>
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
             </div>
           </div>
-        </div>
-
-        <div class="section-title" data-aos="fade-up"></div>
-            <form action="/search" method="get">
-                <!-- Critère de recherche : Nom -->
-                <input type="text" name="nom" placeholder="Nom">
-
-                
-                <!-- Critère de recherche : Agent financier -->
-                  <select name="Type">
-                    <option value="" disabled selected>Type d'agent financier</option>
-                    <option value="rouge">ONG</option>
-                    <option value="bleu">Particuliers</option>
-                    <option value="vert">Organisme gouvernemental</option>
-                    <option value="Collectivit territoriale">Collectivité territoriale</option>
-                    <option value="Autre">Autre</option>
-                  </select>
-                
-                <!-- Critère de recherche : Longueur -->
-                <select name="longueur">
-                  <option value="">Sélectionnez une longueur</option>
-                  <option value="courte">Courte</option>
-                  <option value="moyenne">Moyenne</option>
-                  <option value="longue">Longue</option>
-                </select>
-                
-                <!-- Critère de recherche : Âge -->
-                <input type="number" name="age" placeholder="Âge">
-                
-                <!-- Bouton de recherche -->
-                <input type="submit" value="Rechercher">
-            </form>
-        </div>
-
-        <div class="row user-container" data-aos="fade-left">
-
-          <div class="col-lg-3 col-md-6 user">
-            <div class="member" data-aos="zoom-in" data-aos-delay="100">
-              <div class="pic"><img src="assets/img/user1.jpg" class="img-fluid" alt=""></div>
-              <div class="member-info">
-                <h4>Walter White</h4>
+        </li>
+        <li class="item-a">
+          <div class="carte">
+              <p class="users">USERS</p>
+              <img src="assets/img/user3.jpg" alt="" class="modele">
+              <div class="detail">
+                <h4>ONDOA</h4>
                 <span>Chief Executive Officer</span>
                 <div class="social">
                   <a href=""><i class="bi bi-twitter"></i></a>
@@ -241,135 +242,62 @@
                   <a href=""><i class="bi bi-instagram"></i></a>
                   <a href=""><i class="bi bi-linkedin"></i></a>
                 </div>
-              </div>
             </div>
           </div>
-
-          <div class="col-lg-3 col-md-6 mt-5 mt-md-0 user">
-            <div class="member" data-aos="zoom-in" data-aos-delay="200">
-              <div class="pic"><img src="assets/img/user2.jpg" class="img-fluid" alt=""></div>
-              <div class="member-info">
-                <h4>Sarah Jhonson</h4>
-                <span>Product Manager</span>
+        </li>
+        <li class="item-a">
+          <div class="carte">
+              <p class="users">USERS</p>
+              <img src="assets/img/user4.jpg" alt="" class="modele">
+              <div class="detail">
+                <h4>Li Yang</h4>
+                <span>Chief</span>
                 <div class="social">
                   <a href=""><i class="bi bi-twitter"></i></a>
                   <a href=""><i class="bi bi-facebook"></i></a>
                   <a href=""><i class="bi bi-instagram"></i></a>
                   <a href=""><i class="bi bi-linkedin"></i></a>
                 </div>
-              </div>
             </div>
           </div>
-
-          <div class="col-lg-3 col-md-6 mt-5 mt-lg-0 user">
-            <div class="member" data-aos="zoom-in" data-aos-delay="300">
-              <div class="pic"><img src="assets/img/user3.jpg" class="img-fluid" alt=""></div>
-              <div class="member-info">
-                <h4>William Anderson</h4>
-                <span>CTO</span>
+        </li>
+        <li class="item-a">
+          <div class="carte">
+              <p class="users">USERS</p>
+              <img src="assets/img/user1.jpg" alt="" class="modele">
+              <div class="detail">
+                <h4>Nosql</h4>
+                <span>Developer</span>
                 <div class="social">
                   <a href=""><i class="bi bi-twitter"></i></a>
                   <a href=""><i class="bi bi-facebook"></i></a>
                   <a href=""><i class="bi bi-instagram"></i></a>
                   <a href=""><i class="bi bi-linkedin"></i></a>
                 </div>
-              </div>
             </div>
           </div>
-
-          <div class="col-lg-3 col-md-6 mt-5 mt-lg-0 user">
-            <div class="member" data-aos="zoom-in" data-aos-delay="400">
-              <div class="pic"><img src="assets/img/user4.jpg" class="img-fluid" alt=""></div>
-              <div class="member-info">
-                <h4>Amanda Jepson</h4>
-                <span>Accountant</span>
+        </li>
+        <li class="item-a">
+          <div class="carte">
+              <p class="users">USERS</p>
+              <img src="assets/img/user3.jpg" alt="" class="modele">
+              <div class="detail">
+                <h4>Mansah</h4>
+                <span>People</span>
                 <div class="social">
                   <a href=""><i class="bi bi-twitter"></i></a>
                   <a href=""><i class="bi bi-facebook"></i></a>
                   <a href=""><i class="bi bi-instagram"></i></a>
                   <a href=""><i class="bi bi-linkedin"></i></a>
                 </div>
-              </div>
             </div>
           </div>
-
+        </li>
+      </ul>
         </div>
-          <!-- Deuxième vague -->
-
-          <div class="row user-container" data-aos="fade-left">
-            <div class="col-lg-3 col-md-6 user">
-              <div class="member" data-aos="zoom-in" data-aos-delay="100">
-                <div class="pic"><img src="assets/img/user4.jpg" class="img-fluid" alt=""></div>
-                <div class="member-info">
-                  <h4>NDZANA NGA</h4>
-                  <span>Chief Executive Officer</span>
-                  <div class="social">
-                    <a href=""><i class="bi bi-twitter"></i></a>
-                    <a href=""><i class="bi bi-facebook"></i></a>
-                    <a href=""><i class="bi bi-instagram"></i></a>
-                    <a href=""><i class="bi bi-linkedin"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6 mt-5 mt-md-0 user">
-              <div class="member" data-aos="zoom-in" data-aos-delay="200">
-                <div class="pic"><img src="assets/img/user1.jpg" class="img-fluid" alt=""></div>
-                <div class="member-info">
-                  <h4>NGA Mispa</h4>
-                  <span>Product Manager</span>
-                  <div class="social">
-                    <a href=""><i class="bi bi-twitter"></i></a>
-                    <a href=""><i class="bi bi-facebook"></i></a>
-                    <a href=""><i class="bi bi-instagram"></i></a>
-                    <a href=""><i class="bi bi-linkedin"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6 mt-5 mt-lg-0 user">
-              <div class="member" data-aos="zoom-in" data-aos-delay="300">
-                <div class="pic"><img src="assets/img/user2.jpg" class="img-fluid" alt=""></div>
-                <div class="member-info">
-                  <h4>Kenfack</h4>
-                  <span>CTO</span>
-                  <div class="social">
-                    <a href=""><i class="bi bi-twitter"></i></a>
-                    <a href=""><i class="bi bi-facebook"></i></a>
-                    <a href=""><i class="bi bi-instagram"></i></a>
-                    <a href=""><i class="bi bi-linkedin"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6 mt-5 mt-lg-0 user">
-              <div class="member" data-aos="zoom-in" data-aos-delay="400">
-                <div class="pic"><img src="assets/img/user3.jpg" class="img-fluid" alt=""></div>
-                <div class="member-info">
-                  <h4>Poulain</h4>
-                  <span>Accountant</span>
-                  <div class="social">
-                    <a href=""><i class="bi bi-twitter"></i></a>
-                    <a href=""><i class="bi bi-facebook"></i></a>
-                    <a href=""><i class="bi bi-instagram"></i></a>
-                    <a href=""><i class="bi bi-linkedin"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6 mt-5 mt-md-0">
-              <button id="voir-plus">voir plus</button>
-            </div>
-          </div>
-
-        
-
-      </div>
-    </section><!-- End Team Section -->
+      
+      <!-- End Container User -->
+    </section>
 
 
     <!-- ======= Contact Section ======= -->
@@ -529,6 +457,23 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/Jquery.js"></script>
+  <script src="assets/js/lightslider.js"></script>
+  <script src="assets/js/script.js"></script>
+
+  <!-- JavaScript Bootstrap (optionnel) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- JavaScript Font Awesome (optionnel) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+  <!-- JavaScript Animation (optionnel) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.js"></script>
+
+  <!-- CSS Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- CSS Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <!-- CSS Animation -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
 
 </body>
 
