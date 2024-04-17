@@ -521,6 +521,7 @@ h6 {
   transition: 0.5s;
   color: #fff;
   background: #1acc8d;
+  text-decoration: none;
 }
 
 #hero .btn-get-started:hover {
