@@ -93,18 +93,33 @@
     <section id="register">
             <div class="register-container">
                 <h2>Inscription</h2>
-                <div class="input-group">
-                  <input type="text" id="nom" name="nom" placeholder="Nom...">
+                <div class="profile-picture">
+                  <label for="photo-upload">
+                      <div class="avatar-container">
+                          <img src="assets/img/user4.jpg" alt="Avatar">
+                          <div class="camera-icon">
+                            <i class="bi bi-camera-fill"></i>
+                          </div>
+                      </div>
+                  </label>
+                  <input type="file" id="photo-upload" accept="image/*">
                 </div>
                 <div class="input-group">
-                  <input type="text" id="prenom" name="prenom" placeholder="Prénom...">
+                  <div class="half-width">
+                      <input type="text" id="nom" name="nom" placeholder="Nom...">
+                  </div>
+                  <div class="half-width">
+                      <input type="text" id="prenom" name="prenom" placeholder="Prénom...">
+                  </div>
                 </div>
+              
                 <div class="input-group">
                   <input type="email" id="email" name="email" placeholder="Mail...">
                 </div>
                 <div class="input-group">
-                  <input type="tel" id="telephone" name="telephone" placeholder="Numéro de téléphone...">
+                  <input type="email" id="email2" name="email" placeholder="Confirmer votre Mail...">
                 </div>
+                <!-- End Hero 
                 <div class="input-group">
                   <select id="fonction" name="fonction" required>
                     <option value="" disabled selected>Choisir une fonction</option>
@@ -115,12 +130,14 @@
                         <option value="visiteur">Visiteur</option>
                         <option value="formateur">Formateur</option>
                   </select>
-                </div>
+                -->
                 <div class="input-group">
-                  <label for="password">Mot de passe :</label>
-                  <input type="text" id="password" name="password" placeholder="Mot de passe...">
+                  <input type="password" id="password" name="password" placeholder="Mot de passe...">
                 </div>
                 <button type="submit" class="btn-submit" href="/login.html">S'inscrire</button>
+
+            </div>
+                
             </div>
     </section>
 

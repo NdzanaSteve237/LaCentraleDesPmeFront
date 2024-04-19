@@ -99,15 +99,6 @@
   /**
    * Toggle .header-scrolled class to #header when user is scrolled
    */
-  var userContainer = document.querySelector(".user-container");
-  var voirPlusButton = document.getElementById("voir-plus");
-  userContainer.addEventListener("scroll", function() {
-    if (userContainer.scrollWidth > userContainer.clientWidth) {
-      voirPlusButton.style.display = "block";
-    } else {
-      voirPlusButton.style.display = "none";
-    }
-  })
 
   /*
     document.getElementById("voir-plus")

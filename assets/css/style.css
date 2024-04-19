@@ -172,7 +172,10 @@ h6 {
 
 /* Styles pour les champs de saisie */
 .input-group {
+  display: flex;
+  justify-content: space-between;
   margin-bottom: 20px;
+  align-items: center;
 }
 
 .input-group label {
@@ -215,6 +218,52 @@ h6 {
   transition: all 0.5s;
   background: rgba(1, 4, 136, 0.9);
 }
+
+.profile-picture {
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.avatar-container {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.avatar-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.camera-icon {
+  position: absolute;
+  bottom: 0;
+  right: 10; /* Placer l'icône en bas à droite */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.camera-icon i {
+  font-size: 24px;
+}
+
+/* Pour masquer l'élément input après la sélection de l'image */
+.profile-picture input[type="file"] {
+  display: none;
+}
+
+.half-width {
+  width: 48%; /* Laissez un peu d'espace entre les éléments */
+}
+
 
 /*--------------------------------------------------------------
 # Navigation Menu
@@ -510,7 +559,7 @@ h6 {
   font-size: 24px;
 }
 
-#hero .btn-get-started {
+#hero .btn-get-started, .btn-get-started  {
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
   font-size: 16px;
@@ -687,6 +736,10 @@ h6 {
   100% {
     transform: translate(85px, 0%);
   }
+}
+
+.fond_gris {
+  color: #aaaaaa;
 }
 
 /*--------------------------------------------------------------
