@@ -106,6 +106,19 @@
     <section id="create-company">
         <div class="create-company-container register-container">
             <h2>Création de votre entreprise</h2>
+            
+            <div class="profile-picture">
+              <label for="photo-upload">
+                  <div class="avatar-container">
+                      <img src="assets/img/user4.jpg" alt="Avatar">
+                      <div class="camera-icon">
+                        <i class="bi bi-camera-fill"></i>
+                      </div>
+                  </div>
+                  <label for="logo">Logo de l'entreprise</label>
+              </label>
+              <input type="file" id="photo-upload" accept="image/*">
+            </div>
             <div class="input-group">
               <input type="text" id="nom" name="nom" placeholder="Nom de l'entreprise" required>
             </div>
@@ -117,9 +130,6 @@
             </div>
             <div class="input-group">
               <input type="text" id="services" name="services" placeholder="Services / Produits">
-            </div>
-            <div class="input-group">
-              <input type="number" id="employes" name="employes" placeholder="Nombre d'employés">
             </div>
             <div class="input-group">
               <input type="text" id="chiffre" name="chiffre" placeholder="Chiffre d'affaires" required>
