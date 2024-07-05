@@ -1,11 +1,97 @@
 <div class="main-content">
   <div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-2_4 col-md-6 col-sm-6">
+            <div class="card card-stats" (click)="setColorText('card-header-warning', 'Vos parties prenantes en Approvisionnement')">
+                <div class="card-header card-header-warning card-header-icon">
+                    <div class="card-icon">
+                        <i class="material-icons">people</i>
+                    </div>
+                    <p class="card-category">Approvisionnement</p>
+                    <h3 class="card-title">50
+                        <small></small>
+                    </h3>
+                </div>
+                <div class="card-footer">
+                    <div class="stats">
+                        <i class="material-icons text-danger">warning</i>
+                        <a href="javascript:void(0)"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-2_4 col-md-6 col-sm-6">
+            <div class="card card-stats" (click)="setColorText('card-header-success', 'Vos parties prenantes en Fabrications')">
+                <div class="card-header card-header-success card-header-icon">
+                    <div class="card-icon">
+                        <i class="material-icons">store</i>
+                    </div>
+                    <p class="card-category">Fabrication</p>
+                    <h3 class="card-title">02</h3>
+                </div>
+                <div class="card-footer">
+                    <div class="stats">
+                        <i class="material-icons">date_range</i> Last 24 Hours
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-2_4 col-md-6 col-sm-6">
+            <div class="card card-stats" (click)="setColorText('card-header-danger', 'Vos parties prenantes en Commerce')">
+                <div class="card-header card-header-danger card-header-icon">
+                    <div class="card-icon">
+                        <i class="material-icons">info_outline</i>
+                    </div>
+                    <p class="card-category">Commercial</p>
+                    <h3 class="card-title">75</h3>
+                </div>
+                <div class="card-footer">
+                    <div class="stats">
+                        <i class="material-icons">local_offer</i> Tracked from Github
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-2_4 col-md-6 col-sm-6">
+            <div class="card card-stats" (click)="setColorText('card-header-medium', 'Vos parties prenantes en Marketing et ventes')">
+                <div class="card-header card-header-medium card-header-icon">
+                    <div class="card-icon">
+                        <i class="fa fa-shopping-cart"></i>
+
+                    </div>
+                    <p class="card-category">Marketing/Vente</p>
+                    <h3 class="card-title">+245</h3>
+                </div>
+                <div class="card-footer">
+                    <div class="stats">
+                        <i class="material-icons">update</i> Just Updated
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-2_4 col-md-6 col-sm-6">
+            <div class="card card-stats" (click)="setColorText('card-header-info', 'Vos parties prenantes en Service')">
+                <div class="card-header card-header-info card-header-icon">
+                    <div class="card-icon">
+                        <i class="fa fa-wrench"></i>
+                    </div>
+                    <p class="card-category">Services</p>
+                    <h3 class="card-title">+245</h3>
+                </div>
+                <div class="card-footer">
+                    <div class="stats">
+                        <i class="material-icons">update</i> Just Updated
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
       <div class="row">
           <div class="col-md-12">
               <div class="card">
-                  <div class="card-header card-header-danger">
-                      <h4 class="card-title ">Simple Table</h4>
-                      <p class="card-category"> Here is a subtitle for this table</p>
+                  <div class="card-header" [ngClass]="currentColor">
+                      <h4 class="card-title "> {{ currentText }}</h4>
+                      <p class="card-category"> Vos parties prenantes</p>
                   </div>
                   <div class="card-body">
                       <div class="table-responsive">
@@ -138,9 +224,9 @@
           </div>
           <div class="col-md-12">
               <div class="card card-plain">
-                  <div class="card-header card-header-danger">
-                      <h4 class="card-title mt-0"> Table on Plain Background</h4>
-                      <p class="card-category"> Here is a subtitle for this table</p>
+                  <div class="card-header" [ngClass]="currentColor">
+                      <h4 class="card-title mt-0"> {{ currentText }}</h4>
+                      <p class="card-category"> Vos parties prenantes</p>
                   </div>
                   <div class="card-body">
                       <div class="table-responsive">

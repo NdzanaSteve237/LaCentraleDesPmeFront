@@ -1,0 +1,29 @@
+<!-- pme-details.component.html -->
+<div class="container">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <div class="card mt-3">
+      <div class="card-header">
+        <h3>{{ pme?.Nom }}</h3>
+      </div>
+      <div class="card-body">
+        <img *ngIf="pme?.Logo" [src]="pme.Logo" class="img-fluid mb-3" alt="Logo de {{ pme.Nom }}">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"><strong>Statut Juridique:</strong> {{ pme?.Statut_juridique }}</li>
+          <li class="list-group-item"><strong>Effectif:</strong> {{ pme?.Effectif }}</li>
+          <li class="list-group-item"><strong>Email:</strong> {{ pme?.Email }}</li>
+          <li class="list-group-item"><strong>Type:</strong> {{ pme?.Type }}</li>
+          <li class="list-group-item"><strong>Site Web:</strong> <a [href]="pme?.SiteWeb" target="_blank">{{ pme?.SiteWeb }}</a></li>
+          <li class="list-group-item"><strong>Téléphone:</strong> {{ pme?.Tel }}</li>
+          <li class="list-group-item"><strong>Chiffre d'Affaire:</strong> {{ pme?.ChiffreAffaire }}</li>
+          <li class="list-group-item"><strong>Description:</strong> {{ pme?.Description }}</li>
+          <li class="list-group-item"><strong>Localisation:</strong> {{ pme?.Localisation }}</li>
+          <li class="list-group-item"><strong>Date de Création:</strong> {{ pme?.DateCreation }}</li>
+          <li class="list-group-item"><strong>Département:</strong> {{ pme?.Departement }}</li>
+          <li class="list-group-item"><strong>Région:</strong> {{ pme?.Region }}</li>
+          <li class="list-group-item"><strong>Pays:</strong> {{ pme?.Pays }}</li>
+          <li class="list-group-item"><strong>Note:</strong> {{ pme?.Note }}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  

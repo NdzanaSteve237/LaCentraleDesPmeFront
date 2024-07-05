@@ -7,6 +7,11 @@ import { AppRoutingModule } from './app.routing';
 import { ComponentsModule } from './components/components.module';
 import { AppComponent } from './app.component';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
+import { LoginComponent } from './login/login.component';
+import { CreatePmeComponent } from './create-pme/create-pme.component';
+import { ColorService } from './color.service/color.service';
+import { HomeComponent } from './home/home.component';
+import { PmeDetailsComponent } from './pme-details/pme-details.component';
 
 @NgModule({
   imports: [
@@ -21,6 +26,10 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
   declarations: [
     AppComponent,
     AdminLayoutComponent,
+    LoginComponent,
+    CreatePmeComponent,
+    HomeComponent,
+    PmeDetailsComponent,
 
   ],
   providers: [],

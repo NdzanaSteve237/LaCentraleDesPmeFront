@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as Chartist from 'chartist';
-
+import { PmesServiceService } from '../pmes.service/pmes.service.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -8,7 +9,24 @@ import * as Chartist from 'chartist';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() { }
+  pmes: any[] = []; // Stocke la liste des PMEs
+  filteredPmes: any[] = []; // Stocke la liste des PMEs filtrées
+  sortedPmes: any[] = []; // Stocke la liste des PMEs triées
+  autocompleteResults: any[] = []; // Stocke les résultats de l'autocomplétion
+  defaultPmes: any[] = []; // Stocke les 4 premières PMEs par ordre alphabétique
+  selectedPme: any = null; // Stocke la PME sélectionnée
+  searchText: string = ''; // Texte de recherche pour l'autocomplétion
+  searchCity: string = ''; // Texte de recherche pour la ville
+  sortBy: string = 'Nom'; // Critère de tri par défaut
+  order: string = 'asc'; // Ordre de tri par défaut
+  currentList: string = 'default'; // Indique quelle liste est actuellement affichée: 'default', 'filtered', 'sorted'
+  noResults: boolean = false; // Indique si aucun résultat n'a été trouvé
+
+  constructor(private PmesServiceService: PmesServiceService, private router: Router) {}
+
+
+
+  
   startAnimationForLineChart(chart){
       let seq: any, delays: any, durations: any;
       seq = 0;
@@ -65,6 +83,7 @@ export class DashboardComponent implements OnInit {
 
       seq2 = 0;
   };
+  
   ngOnInit() {
       /* ----------==========     Daily Sales Chart initialization For Documentation    ==========---------- */
 
@@ -145,6 +164,104 @@ export class DashboardComponent implements OnInit {
 
       //start animation for the Emails Subscription Chart
       this.startAnimationForBarChart(websiteViewsChart);
+
+      // Appeler les méthodes pour obtenir les données au chargement du composant
+      //this.loadPmesList();
+
+      console.log('Composant Dashboard initialisé');
+      this.loadDefaultPmes();
   }
+
+  // Charger les 4 premières PMEs par ordre alphabétique
+    loadDefaultPmes() {
+      this.PmesServiceService.getList().subscribe(data => {
+        console.log('Liste des PMEs:', data);
+        this.pmes = data;
+        this.defaultPmes = data.sort((a, b) => a.Nom.localeCompare(b.Nom)).slice(0, 4);
+        this.currentList = 'default'; // Affiche uniquement la liste par défaut
+      }, error => {
+        console.error('Erreur lors de la récupération des PMEs:', error);
+      });
+    }
+
+  // Méthode d'autocomplétion pour le champ de recherche
+  searchAutocomplete() {
+    if (this.searchText.length > 2) {
+      this.PmesServiceService.getAutocomplete(this.searchText).subscribe(data => {
+        console.log('Résultats de l\'autocomplétion pour le domaine:', data);
+        this.autocompleteResults = data;
+      });
+    } else {
+      this.autocompleteResults = [];
+    }
+  }
+
+  // Méthode d'autocomplétion pour le champ de ville
+  searchCityAutocomplete() {
+    if (this.searchCity.length > 2) {
+      this.PmesServiceService.getAutocomplete(this.searchCity).subscribe(data => {
+        console.log('Résultats de l\'autocomplétion pour la ville:', data);
+        this.autocompleteResults = data;
+      });
+    } else {
+      this.autocompleteResults = [];
+    }
+  }
+
+
+  // Méthode pour trier les PMEs
+  sortPmes() {
+    this.PmesServiceService.getListSorted(this.sortBy, this.order).subscribe(data => {
+      console.log(`PMEs triées par ${this.sortBy} (${this.order}):`, data);
+      this.sortedPmes = data;
+      this.currentList = 'sorted'; // Affiche uniquement la liste triée
+    });
+  }
+
+  // Sélectionner une PME dans les résultats de l'autocomplétion
+  selectPme(pme: any) {
+    console.log('PME sélectionnée:', pme);
+    this.router.navigate(['/pme', pme._id]); // Naviguez vers la page de détails avec l'ID de la PME
+  }
+
+    // Méthode pour filtrer les PMEs
+    filterPmes(filters: any) {
+      this.PmesServiceService.getListFiltered(filters).subscribe(data => {
+        console.log('PMEs filtrées avec les filtres:', filters, data);
+        this.filteredPmes = data;
+        this.currentList = 'filtered'; // Affiche uniquement la liste filtrée
+        this.noResults = data.length === 0; // Vérifiez si aucun résultat n'a été trouvé
+      });
+    }
+
+
+
+
+  // Méthode appelée lors de la soumission du formulaire de recherche
+  onSearch() {
+    console.log('Recherche initiée avec les critères:', {
+      searchText: this.searchText,
+      searchCity: this.searchCity,
+      sortBy: this.sortBy,
+      order: this.order
+    });
+  
+    // Créer les filtres basés sur les critères de recherche
+    const filters = {
+      Nom: this.searchText,
+      Localisation: this.searchCity
+    };
+  
+    // Cacher la liste par défaut et réinitialiser les résultats précédents
+    this.currentList = '';
+    this.noResults = false;
+  
+    // Filtrer les PMEs
+    this.filterPmes(filters);
+  
+    // Trier les PMEs après filtrage
+    this.sortPmes();
+  }
+  
 
 }
