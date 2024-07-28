@@ -12,6 +12,7 @@ import { CreatePmeComponent } from './create-pme/create-pme.component';
 import { ColorService } from './color.service/color.service';
 import { HomeComponent } from './home/home.component';
 import { PmeDetailsComponent } from './pme-details/pme-details.component';
+import { UserSignInComponent } from './user-sign-in/user-sign-in.component';
 
 @NgModule({
   imports: [
@@ -30,6 +31,7 @@ import { PmeDetailsComponent } from './pme-details/pme-details.component';
     CreatePmeComponent,
     HomeComponent,
     PmeDetailsComponent,
+    UserSignInComponent,
 
   ],
   providers: [],
