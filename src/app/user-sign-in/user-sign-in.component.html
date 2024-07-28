@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>inscription</title>
+        <!--link rel="stylesheet" href="styles.css"--> <!-- Fichier CSS pour les styles -->
+    </head>
+    <body>
+        <div class="container">
+            <div class="left-section">
+                <!-- Section pour les images -->
+                <h2>SME City</h2>
+                <div class="image-gallery">
+                    <!-- Insérez vos images ici -->
+                    <img src="image1.jpg" alt="Image 1">
+                    <img src="image2.jpg" alt="Image 2">
+                    <!-- Ajoutez autant d'images que nécessaire -->
+                </div>
+            </div>
+            <div class="right-section">
+                <!-- Section pour le formulaire d'inscription -->
+                <h2>Formulaire d'inscription</h2>
+                <!-- <form action="#" method="post">
+                    <label for="nom">Nom :</label>
+                    <input type="text" id="nom" name="nom" required>
+                    <label for="email">Email :</label>
+                    <input type="email" id="email" name="email" required>
+                    <label for="password">Mot de passe :</label>
+                    <input type="password" id="password" name="password" required>
+                    <label for="confirm-password">Confirmer mot de passe :</label>
+                    <input type="password" id="confirm-password" name="confirm-password" required>
+                    <input type="submit" value="S'inscrire">
+                </form> -->
+                <form (ngSubmit)="onSubmit()">
+                    <label for="nom">Nom :</label>
+                    <input type="text" id="nom" [(ngModel)]="formModel.nom" name="nom" required>
+                    <label for="email">Email :</label>
+                    <input type="email" id="email" [(ngModel)]="formModel.email" name="email" required>
+                    <label for="password">Mot de passe :</label>
+                    <input type="password" id="password" [(ngModel)]="formModel.password" name="password" required>
+                    <label for="confirm-password">Confirmer mot de passe :</label>
+                    <input type="password" id="confirm-password" [(ngModel)]="formModel.confirmPassword" name="confirm-password" required>
+                    <input type="submit" value="S'inscrire">
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

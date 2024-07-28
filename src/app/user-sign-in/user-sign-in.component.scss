@@ -1,0 +1,88 @@
+/* Reset des marges et paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Styles pour le conteneur principal */
+html, body {
+    height: 100%; /* Assure que le body prend toute la hauteur de l'écran */
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    height: 100vh; /* Remplit la hauteur de l'écran */
+    width: 100vw; /* Assure que le conteneur prend toute la largeur de l'écran */
+}
+
+/* Styles pour la section de gauche (images) */
+.left-section {
+    flex: 1; /* Prend 50% de l'espace disponible */
+    /*background-color: #f44336; */
+    background-color: rgba(59,130,246,.5);
+    padding: 20px;
+}
+
+/* Styles pour la section de droite (formulaire) */
+.right-section {
+    flex: 1; /* Prend 50% de l'espace disponible */
+    background-color: #e0e0e0;
+    padding: 20px;
+}
+
+/* Styles spécifiques pour les images */
+.image-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.image-gallery img {
+    width: 100%; /* Les images occupent toute la largeur disponible */
+    max-width: 100%; /* Elles ne dépassent pas leur taille originale */
+    height: auto; /* Hauteur automatique */
+}
+
+/* Styles pour le formulaire */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin-bottom: 10px;
+}
+
+form input[type="text"],
+form input[type="password"],
+form input[type="email"],
+form input[type="submit"] {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+form input[type="submit"] {
+    background-color: #4CAF50; /* Couleur verte */
+    color: white;
+    cursor: pointer;
+}
+
+form input[type="submit"]:hover {
+    background-color: #45a049; /* Couleur verte plus foncée au survol */
+}
+
+/* Styles responsive */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Dispose les sections en colonne */
+    }
+
+    .left-section {
+        display: none; /* Masque la section de gauche sur les écrans petits */
+    }
+}

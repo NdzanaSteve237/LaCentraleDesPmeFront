@@ -7,6 +7,7 @@ import { CreatePmeComponent } from './create-pme/create-pme.component';
 
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { HomeComponent } from './home/home.component';
+import { UserSignInComponent } from './user-sign-in/user-sign-in.component';
 import { PmeDetailsComponent } from './pme-details/pme-details.component';
 
 const routes: Routes =[
@@ -35,6 +36,9 @@ const routes: Routes =[
   },
   {
     path: 'home', component: HomeComponent
+  },
+  {
+    path: 'user-sign-in', component: UserSignInComponent
   }
 ];
 
