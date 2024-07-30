@@ -21,7 +21,8 @@ html, body {
 .left-section {
     flex: 1; /* Prend 50% de l'espace disponible */
     /*background-color: #f44336; */
-    background-color: rgba(59,130,246,.5);
+    /*background-color: rgba(59,130,246,.5);*/
+    background-image: url("../../assets/img/sky_companies.png");
     padding: 20px;
 }
 
@@ -32,6 +33,10 @@ html, body {
     padding: 20px;
 }
 
+.left-section h2 img{
+    width: 13%;
+}
+
 /* Styles spécifiques pour les images */
 .image-gallery {
     display: flex;
@@ -40,7 +45,7 @@ html, body {
 }
 
 .image-gallery img {
-    width: 100%; /* Les images occupent toute la largeur disponible */
+    width: 50%; /* Les images occupent x% la largeur disponible */
     max-width: 100%; /* Elles ne dépassent pas leur taille originale */
     height: auto; /* Hauteur automatique */
 }
