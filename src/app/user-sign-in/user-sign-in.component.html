@@ -15,7 +15,6 @@
                     <!-- Insérez vos images ici -->
                     <!--img src="assets/img/SME_City_logo_blanc_sans_fond.png" alt="Logo blanc SME city"-->
                     <img src="assets/img/SME_City_logo_sans_fond.png" alt="Logo SME city">
-                    <!-- Ajoutez autant d'images que nécessaire -->
                 </div>
             </div>
             <div class="right-section">
@@ -32,7 +31,7 @@
                     <input type="password" id="confirm-password" name="confirm-password" required>
                     <input type="submit" value="S'inscrire">
                 </form> -->
-                <form (ngSubmit)="onSubmit()">
+                <!-- <form (ngSubmit)="onSubmit()">
                     <label for="nom">Nom :</label>
                     <input type="text" id="nom" [(ngModel)]="formModel.nom" name="nom" required>
                     <label for="email">Email :</label>
@@ -42,7 +41,42 @@
                     <label for="confirm-password">Confirmer mot de passe :</label>
                     <input type="password" id="confirm-password" [(ngModel)]="formModel.confirmPassword" name="confirm-password" required>
                     <input type="submit" value="S'inscrire">
+                </form> -->
+                <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+                    <label for="nom">Nom :</label>
+                    <div *ngIf="submitted && registrationForm.controls.nom.errors">
+                        <small class="error" *ngIf="registrationForm.controls.nom.errors.required">champ obligatoire</small>
+                    </div>
+                    <input type="text" id="nom" formControlName="nom">
+                    
+                  
+                    <label for="email">Email :</label>
+                    <input type="email" id="email" formControlName="email">
+                    <div *ngIf="submitted && registrationForm.controls.email.errors">
+                      <small class="error" *ngIf="registrationForm.controls.email.errors.required">Veuillez remplir ce champ.</small>
+                    </div>
+                  
+                    <label for="password">Mot de passe :</label>
+                    <input type="password" id="password" formControlName="password">
+                    <div *ngIf="submitted && registrationForm.controls.password.errors">
+                      <small class="error" *ngIf="registrationForm.controls.password.errors.required">Veuillez remplir ce champ.</small>
+                    </div>
+                  
+                    <label for="confirm-password">Confirmer mot de passe :</label>
+                    <input type="password" id="confirm-password" formControlName="confirmPassword">
+                    <div *ngIf="submitted && registrationForm.controls.confirmPassword.errors">
+                      <small class="error" *ngIf="registrationForm.controls.confirmPassword.errors.required">Veuillez remplir ce champ.</small>
+                    </div>
+                  
+                    <div>
+                      <input type="checkbox" id="show-passwords" (click)="toggleShowPasswords()">
+                      <label for="show-passwords">Afficher les mots de passe</label>
+                    </div>
+                  
+                    <input type="submit" value="S'inscrire">
                 </form>
+                  
+                  
             </div>
         </div>
     </body>

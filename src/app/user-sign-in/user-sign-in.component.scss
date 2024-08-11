@@ -1,14 +1,15 @@
 /* Reset des marges et paddings */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+//  * {
+//      margin: 0;
+//      padding: 0;
+//      box-sizing: border-box;
+//      border: 0;
+//  }
 
 /* Styles pour le conteneur principal */
-html, body {
-    height: 100%; /* Assure que le body prend toute la hauteur de l'écran */
-}
+// html, body {
+//     height: 100%; /* Assure que le body prend toute la hauteur de l'écran */
+// }
 
 .container {
     display: flex;
@@ -72,7 +73,7 @@ form input[type="submit"] {
 }
 
 form input[type="submit"] {
-    background-color: #4CAF50; /* Couleur verte */
+    background-color: #4CAF50; 
     color: white;
     cursor: pointer;
 }
@@ -91,3 +92,9 @@ form input[type="submit"]:hover {
         display: none; /* Masque la section de gauche sur les écrans petits */
     }
 }
+
+/* erreur sur le mdp*/
+.error {
+    color: red;
+  }
+  
