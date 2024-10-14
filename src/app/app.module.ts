@@ -13,10 +13,6 @@ import { ColorService } from './color.service/color.service';
 import { HomeComponent } from './home/home.component';
 import { PmeDetailsComponent } from './pme-details/pme-details.component';
 import { UserSignInComponent } from './user-sign-in/user-sign-in.component';
-<<<<<<< HEAD
-
-=======
->>>>>>> 329e239e75f6e8fd2de7b17479161468942a75fc
 
 @NgModule({
   imports: [

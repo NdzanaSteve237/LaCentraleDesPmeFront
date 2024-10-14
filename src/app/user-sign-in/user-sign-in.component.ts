@@ -1,11 +1,7 @@
-<<<<<<< HEAD
 import { Component, OnInit, AfterViewInit, ElementRef, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 
-=======
-import { Component, OnInit } from '@angular/core';
->>>>>>> 329e239e75f6e8fd2de7b17479161468942a75fc
 
 @Component({
   selector: 'app-user-sign-in',
@@ -14,7 +10,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserSignInComponent implements OnInit {
 
-<<<<<<< HEAD
   formModel = {
     nom: '',
     email: '',
@@ -34,14 +29,10 @@ export class UserSignInComponent implements OnInit {
       confirmPassword: ['', Validators.required]
     });
    }
-=======
-  constructor() { }
->>>>>>> 329e239e75f6e8fd2de7b17479161468942a75fc
 
   ngOnInit(): void {
   }
 
-<<<<<<< HEAD
 
   // onSubmit() {
   //   if (this.formModel.password !== this.formModel.confirmPassword) {
@@ -88,6 +79,4 @@ export class UserSignInComponent implements OnInit {
     confirmPasswordInput.type = this.showPasswords ? 'text' : 'password';
   }
 
-=======
->>>>>>> 329e239e75f6e8fd2de7b17479161468942a75fc
 }
